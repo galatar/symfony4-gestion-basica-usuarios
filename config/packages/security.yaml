@@ -1,7 +1,15 @@
 security:
+    encoders:
+        App\Entity\Persona:
+            algorithm: bcrypt
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        mi_base_de_datos:
+            entity:
+                class: App\Entity\Persona
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
