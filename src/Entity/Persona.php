@@ -4,10 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use AssertionError;
+//use AssertionError;
 
 /**
- * ORM\Entity(repositoryClass="App\Repository\PersonaRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PersonaRepository")
  * @ORM\Table(name="Persona")
  **/
 class Persona implements UserInterface, \Serializable
@@ -75,6 +75,10 @@ class Persona implements UserInterface, \Serializable
 //        $this->startDate = $data['fechaAlta'];
 //    }
 
+    function __construct()
+    {
+    }
+
     /**
      * @return int
      */
@@ -137,6 +141,14 @@ class Persona implements UserInterface, \Serializable
     public function getEsActivo()
     {
         return $this->esActivo;
+    }
+
+    /**
+     * @param int $esActivo
+     */
+    public function setEsActivo($esActivo)
+    {
+        $this->esActivo = $esActivo;
     }
 
     /**

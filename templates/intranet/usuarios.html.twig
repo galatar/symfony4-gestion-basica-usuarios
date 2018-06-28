@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block titulo %}
+    Lista de personas
+{% endblock %}
+{% block contenido %}
+    <h1>Lista de personas</h1>
+    <ul>
+        {% for persona in personas %}
+            <li>{{ persona.nombre }} {{ persona.apellidos }} - {{ persona.correo }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

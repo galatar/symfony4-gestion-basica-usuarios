@@ -1,7 +1,13 @@
-{{ form_start(form) }}
+{% extends 'layout_base_cover.html.twig' %}
+
+{% block contenido %}
+    {{ form_start(form) }}
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.apellidos) }}
     {{ form_row(form.correo) }}
     {{ form_row(form.plainPassword.first) }}
     {{ form_row(form.plainPassword.second) }}
 
-<button type="submit">Registrar</button>
-{{ form_end(form) }}
+    <button type="submit">Registrar</button>
+    {{ form_end(form) }}
+{% endblock %}

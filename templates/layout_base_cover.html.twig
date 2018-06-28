@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Galatar: tutorial de gestión básica de usuarios en Symfony 4">
+    <meta name="author" content="Juanan Ruiz ">
+    <title>{{ titulo }} - Galatar SymfoUsuarios</title>
+    {%  block css %}
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/cover.css" rel="stylesheet">
+        <link href="/assets/css/symfousuarios.css" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="{{ path('inicio') }}" title="Inicio"><span data-feather="home"></span></a>
+                <a class="nav-link" href="http://galatar.com" title="Galatar"><span data-feather="book-open"></span></a>
+                <a class="nav-link" href="https://github.com/galatar" title="Github"><span data-feather="github"></span></a>
+                <a class="nav-link" href="https://twitter.com/juananruiz" title="Galatar"><span data-feather="twitter"></span></a>
+
+                {% if app.user %}
+                    <a class="nav-link" href="#"><span data-feather="user"></span> {{ app.user.nombre }}</a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('login') }}"><span data-feather="log-in"></span> Login</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p class="small"><a href="http://galatar.com">Galatar</a></p>
+        </div>
+    </footer>
+</div>
+{% block js %}
+    <script src="/assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+{% endblock %}
+</body>
+</html>
