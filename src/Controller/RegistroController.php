@@ -34,7 +34,7 @@ class RegistroController extends Controller
 
             // Graba datos por defecto
             $persona->setFechaAlta(new \DateTime());
-            $persona->setEsActivo(0);
+            $persona->setEsActivo(1);
 
             // Graba la persona en la base de datos!
             $em = $this->getDoctrine()->getManager();
@@ -44,7 +44,7 @@ class RegistroController extends Controller
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
 
-            return $this->redirectToRoute('personas');
+            return $this->redirectToRoute('login');
         }
 
         return $this->render('registro.html.twig', array('form' => $form->createView()));

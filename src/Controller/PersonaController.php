@@ -24,24 +24,24 @@ class PersonaController extends AbstractController
     /**
      * @Route("/personas", name="personas")
      */
-    public function listarPersonas()
+    public function listar()
     {
         $personas = $this->repository->findAll();
         // Un intento (fallido) de probar los mensajes para el usuario
         $this->addFlash('success', 'Se ha desplegado la lista de usuarios');
 
-        return $this->render('lista.html.twig', array(
+        return $this->render('intranet/usuarios.html.twig', array(
             'personas' => $personas));
     }
 
     /**
-     * @Route ("/admin", name="admin")
+     * @Route ("/intranet", name="intranet")
      */
     public function adminIndex()
     {
         $usuario = $this->getUser();
 
-        return $this->render('admin/index.html.twig', array(
+        return $this->render('intranet/inicio.html.twig', array(
             'usuario' => $usuario));
     }
 

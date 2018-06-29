@@ -1,43 +1,20 @@
-{% extends 'admin/layout_dashboard.html.twig' %}
+{% extends 'intranet/layout_base_dashboard.html.twig' %}
 {% set titulo = 'Panel de administración' %}
-
 
 {% block contenido %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">{{ titulo }}</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary"><a  href="{{ path('admin_frase_crear') }}"><span
-                                data-feather="plus-circle"></span>Crear frase</a></button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
+                <button class="btn btn-sm btn-outline-secondary"><a href="#"><span
+                                data-feather="plus-circle"></span> Importar</a></button>
+                <button class="btn btn-sm btn-outline-secondary">Exportar</button>
             </div>
             <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
+                <span data-feather="calendar"></span>Calendario
             </button>
         </div>
     </div>
-
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Slug</th>
-                <th>Libro</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for frase in frases %}
-                    <tr>
-                        <td><a class="badge badge-primary" href="{{ path('admin_frase_editar', {'id': frase.id}) }}" >{{ frase.id }}</a></td>
-                        <td>{{ frase.slug }}</td>
-                        <td>{{ frase.libro.titulo }}</td>
-                        <td><a href="{{ path('admin_frase_borrar', {'id': frase.id}) }}"><span data-feather="trash"></span></a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <h3>¡Bravo! Has accedido a la intranet</h3>
+    <p>Te has identificado como {{ usuario.username }}</p>
 {% endblock %}

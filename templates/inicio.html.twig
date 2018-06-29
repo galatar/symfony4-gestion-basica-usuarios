@@ -2,6 +2,7 @@
 {% set titulo= 'Portal Público' %}
 
 {% block contenido %}
-    <p>Bienvenido a la zona pública de este sitio web</p>
-    <p>Accede desde el login a la intranet</p>
+    <h3>Bienvenido a la zona pública de este sitio web</h3>
+    <p>Accede desde el <a href="{{ path('login') }}">formulario de login</a> a la intranet o
+        <a href="{{ path('registro_usuario') }}">regístrate</a> si aún no tienes cuenta de usuario</p>
 {% endblock %}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Galatar: tutorial de gestión básica de usuarios en Symfony 4">
     <meta name="author" content="Juanan Ruiz">
-    <title>{{ titulo }} - Galatar  - Galatar SymfoUsuarios</title>
+    <title>{{ titulo }} - Galatar SymfoUsuarios</title>
     {% block css %}
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/dashboard.css" rel="stylesheet">
@@ -14,8 +14,8 @@
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ path('inicio') }}">Galatar</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ path('inicio') }}">Galatar Symfo Usuarios</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Buscar">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="{{ path('logout') }}">Cerrar sesión</a>
@@ -29,69 +29,21 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('admin_inicio') }}">
+                        <a class="nav-link active" href="{{ path('intranet') }}">
                             <span data-feather="home"></span>
                             Inicio <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_inicio') }}">
-                            <span data-feather="message-circle"></span>
-                            Frases
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_libros') }}">
-                            <span data-feather="book"></span>
-                            Libros
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_autores') }}">
-                            <span data-feather="feather"></span>
-                            Autores
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_usuarios') }}">
+                        <a class="nav-link" href="{{ path('personas') }}">
                             <span data-feather="users"></span>
                             Usuarios
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
-                            Categorías
-                        </a>
-                    </li>
-                </ul>
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Atajos</span>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_frase_crear') }}">
-                            <span data-feather="plus-circle"></span>
-                            Nueva frase
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_libro_crear') }}">
-                            <span data-feather="plus-circle"></span>
-                            Nuevo libro
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_autor_crear') }}">
-                            <span data-feather="plus-circle"></span>
-                            Nuevo autor
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('admin_usuario_crear') }}">
-                            <span data-feather="plus-circle"></span>
-                            Nuevo usuario
+                            <span data-feather="book"></span>
+                            Roles
                         </a>
                     </li>
                 </ul>
